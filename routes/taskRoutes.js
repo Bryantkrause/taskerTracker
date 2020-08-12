@@ -8,7 +8,12 @@ module.exports = app => {
   })
   app.get('/tasks', (req, res) => {
     Task.find()
-    .then(items => res.json(items))
+    .then(task => res.json(task))
+    .catch(e => console.error(e))
+  })
+  app.get('/task/:id', (req, res) => {
+    Task.findOne({ _id: req.params.id })
+    .then(task => res.json(task))
     .catch(e => console.error(e))
   })
   app.delete('/task/:id', (req, res) => {
