@@ -3,11 +3,11 @@ import TaskContext from '../../utils/TaskContext'
 import { Button, Form, Label, Input } from 'reactstrap'
 
 
-const MovieForm = () => {
+const EnterForm = () => {
   return (
     <TaskContext.Consumer>
       {
-        ( {task, assignedTo, status, taskSubmit, inputChange} ) => (
+        ( {task, status, taskSubmit, inputChange} ) => (
         <Form>
           <Label htmlFor="task">Input Task</Label>
           <Input type="text" placeholder="Insert a task here" name="task" onChange={inputChange} value={task}/>
@@ -21,4 +21,4 @@ const MovieForm = () => {
   )
 }
 
-export default MovieForm
+export default EnterForm
