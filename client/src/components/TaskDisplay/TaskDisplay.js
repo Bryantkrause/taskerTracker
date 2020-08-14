@@ -16,6 +16,7 @@ const TaskDisplay = () => {
                   <th><h4>Status:</h4></th>
                   <th><h4>Created At:</h4></th>
                   <th><h4>Last Updated:</h4></th>
+                  <th><h4>Delete</h4></th>
                 </tr>
               </thead>
               <tbody>
