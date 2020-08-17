@@ -4,8 +4,9 @@ const TaskContext = React.createContext({
   task: '',
   status: '',
   tasks: [],
-  taskSubmit: () => { },
-  inputChange: () => { },
+  deleteTask: () => {},
+  taskSubmit: () => {},
+  inputChange: () => {},
   getTasks: () => {}
 })
 

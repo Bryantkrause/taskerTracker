@@ -14,6 +14,7 @@ class Tasks extends React.Component {
     },
     taskSubmit: e => {
       e.preventDefault()
+      console.log(e)
       //this.setState({ [e.target.name]: e.target.value })
       axios.post(`/task`, {
         task: this.state.task,
@@ -25,6 +26,10 @@ class Tasks extends React.Component {
           this.setState({ tasks: arr, task: '', status: ''  })
         })
     }
+    // ,
+    // deleteTask: e => {
+    //   console.log(e.target)
+    // }
   }
 
   componentDidMount() { // When the page loads grab the data from the database and update the tasks array
