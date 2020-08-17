@@ -3,6 +3,11 @@ import TaskContext from '../../utils/TaskContext'
 import { Table } from 'reactstrap'
 
 const TaskDisplay = () => {
+
+  const deleteIt = (_id) => {
+    console.log(_id)
+  }
+
   return (
     <TaskContext.Consumer>
       {
@@ -15,19 +20,18 @@ const TaskDisplay = () => {
                   <th><h4>Task</h4></th>
                   <th><h4>Status:</h4></th>
                   <th><h4>Created At:</h4></th>
-                  <th><h4>Last Updated:</h4></th>
                   <th><h4>Delete</h4></th>
                 </tr>
               </thead>
               <tbody>
                   {
-                    tasks.map( ( { _id, task, status, createdAt, updatedAt}, i) =>
+                    tasks.map( ( { _id, task, status, createdAt}, i) =>
                       <tr key={_id}>
                         <td>{i+1}</td>
                         <td>{task}</td>
                         <td>{status}</td>
                         <td>{createdAt}</td>
-                        <td>{updatedAt}</td>
+                        <td><button onClick={() => deleteIt(_id)}>Delete </button></td>
                       </tr>
                     )
                   }

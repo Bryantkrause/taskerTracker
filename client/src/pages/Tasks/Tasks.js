@@ -26,10 +26,11 @@ class Tasks extends React.Component {
           this.setState({ tasks: arr, task: '', status: ''  })
         })
     }
-    // ,
-    // deleteTask: e => {
-    //   console.log(e.target)
-    // }
+    ,
+    deleteTask: e => {
+      e.preventDefault()
+      console.log(e)
+    }
   }
 
   componentDidMount() { // When the page loads grab the data from the database and update the tasks array
