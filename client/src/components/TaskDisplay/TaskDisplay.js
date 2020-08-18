@@ -4,14 +4,10 @@ import { Table } from 'reactstrap'
 
 const TaskDisplay = () => {
 
-  const deleteIt = (_id) => {
-    console.log(_id)
-  }
-
   return (
     <TaskContext.Consumer>
       {
-        ({tasks}) => (
+        ({tasks, deleteTask}) => (
           <>
             <Table dark>
               <thead>
@@ -31,7 +27,7 @@ const TaskDisplay = () => {
                         <td>{task}</td>
                         <td>{status}</td>
                         <td>{createdAt}</td>
-                        <td><button onClick={() => deleteIt(_id)}>Delete </button></td>
+                        <td><button onClick={() => deleteTask(_id)}>Delete </button></td>
                       </tr>
                     )
                   }

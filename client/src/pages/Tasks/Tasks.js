@@ -25,11 +25,25 @@ class Tasks extends React.Component {
           arr.push(data)
           this.setState({ tasks: arr, task: '', status: ''  })
         })
-    }
-    ,
-    deleteTask: e => {
-      e.preventDefault()
-      console.log(e)
+    },
+    deleteTask: _id => {
+      console.log(_id)
+      axios.delete(`/task/${_id}`,)
+      .then( r => {
+        axios.get('/tasks')
+        .then( ({data}) => this.setState({ tasks: data }))
+        console.log('data deleted')
+        console.log(this.state)
+      })
+      .catch(e => console.error('cant delete', e))
+    },
+    getTasks: () => {
+      console.log('getting tasks')
+      axios.get(`/tasks`)
+      .then (r =>{
+        console.log('tasks recieved')
+      })
+      .catch(e => console.error('no task for you', e))
     }
   }
 
